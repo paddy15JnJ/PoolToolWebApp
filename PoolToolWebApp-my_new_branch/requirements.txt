@@ -1,0 +1,10 @@
+certifi==2018.10.15
+chardet==3.0.4
+Django==1.11.16
+django-angular==2.0.3
+django-salesforce==0.7.2
+idna==2.7
+pytz==2018.6
+requests==2.20.0
+simplejson==3.16.0
+urllib3==1.24
