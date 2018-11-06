@@ -150,12 +150,12 @@ def fixtures(request):
     print(salesforceData)
     half = int(len(all_people) / 2)
     print(half)
-    halfAlist = all_people[::half]
+    halfAlist = all_people[::5]
     print("halfAlist")
     print(halfAlist)
     round2 = []
 
-    for person in all_people:
+    for person in halfAlist:
         if len(new_arr) == 2:
             round2.append(new_arr)
             new_arr = []
@@ -169,7 +169,7 @@ def fixtures(request):
     round5 = []
     tiptop = []
     tiptop.append(salesforceData)
-    tiptop.append(round2)
+    # tiptop.append(round2)
     salesforceData.append(round2)
     salesforceData2 = salesforceData
     print("salesforceData")
@@ -203,26 +203,26 @@ def fixtures(request):
     # people_persons = []
     # people_persons.append(myData)
     #
-
-    myData2 = [
-        [
-            [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1, "displaySeed": "D1", "score": 47},
-             {"name": "Andrew Miller", "id": "andrew-miller", "seed": 2}],
-            [{"name": "James Coutry", "id": "james-coutry", "seed": 3},
-             {"name": "Sam Merrill", "id": "sam-merrill", "seed": 4}],
-
-        ],
-        [
-            [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1},
-             {"name": "James Coutry", "id": "james-coutry", "seed": 3}],
-
-        ],
-        [
-            [{"name": "James Coutry", "id": "james-coutry", "seed": 3}],
-        ]
-    ];
-    print("myData")
-    print(myData2)
+    #
+    # myData2 = [
+    #     [
+    #         [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1, "displaySeed": "D1", "score": 47},
+    #          {"name": "Andrew Miller", "id": "andrew-miller", "seed": 2}],
+    #         [{"name": "James Coutry", "id": "james-coutry", "seed": 3},
+    #          {"name": "Sam Merrill", "id": "sam-merrill", "seed": 4}],
+    #
+    #     ],
+    #     [
+    #         [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1},
+    #          {"name": "James Coutry", "id": "james-coutry", "seed": 3}],
+    #
+    #     ],
+    #     [
+    #         [{"name": "James Coutry", "id": "james-coutry", "seed": 3}],
+    #     ]
+    # ];
+    # print("myData")
+    # print(myData2)
     print("tiptop")
     print(tiptop)
     # dict = {"myData": myData}
@@ -238,8 +238,8 @@ def players(request):
     all_people = Contact.objects.all()
     persons = []
     for person in all_people:
-        # persons.append(person)
-        print(person)
+        persons.append(person)
+        # print(person)
 
     # print(persons)
 
