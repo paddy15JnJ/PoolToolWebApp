@@ -234,6 +234,11 @@ def fixtures(request):
 
 def players(request):
     print(list(Contact.objects.all()))
+    print(Contact)
+    idlimit = 50
+    # for i in range(3,idlimit):
+    #     Contact.objects.filter(id=i).delete()
+    # Contact.objects.filter(id=).delete()
 
     all_people = Contact.objects.all()
     persons = []
@@ -242,6 +247,10 @@ def players(request):
         # print(person)
 
     # print(persons)
+
+    # sql = 'DELETE FROM tasks'
+    # cur = conn.cursor()
+    # cur.execute(sql)
 
     dict = {"persons": persons}
 
