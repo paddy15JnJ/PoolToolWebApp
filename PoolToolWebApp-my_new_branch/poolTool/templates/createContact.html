@@ -71,12 +71,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="{% static 'admin/img/blackball.png'%}">
+    <link rel="icon" href="{% static 'admin/img/blackball.png' %}">
     <title>Sign up!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-{#    <link rel="icon" type="image/png" href="{% static 'admin/img/icons/favicon.ico' %}"/>#}
+    {#    <link rel="icon" type="image/png" href="{% static 'admin/img/icons/favicon.ico' %}"/>#}
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'admin/vendor/bootstrap/css/bootstrap.min.css' %}">
     <!--===============================================================================================-->
@@ -100,14 +100,65 @@
     <!--===============================================================================================-->
 </head>
 <body>
+<div class="topnav">
+  <a class="active" href="">Sign Up</a>
+  <a href="players">Players</a>
+  <a href="fixtures">Fixtures</a>
+</div>
+<style>
+{#* Add a black background color to the top navigation */#}
+.topnav {
+    background-color: #fa01fe;
+    overflow: hidden;
+}
 
+{#/* Style the links inside the navigation bar */#}
+.topnav a {
+    float: left;
+    color: #f2e9f0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+{#/* Change the color of links on hover */#}
+.topnav a:hover {
+    background-color: #ddd;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+{#/* Add a color to the active/current link */#}
+.topnav a.active {
+    background-color: #5f88ea;
+    color: white;
+}
+</style>
 <div class="limiter">
     <div class="tech-slideshow">
-  <div class="mover-1"></div>
-  <div class="mover-2"></div>
-</div>
+        <div class="mover-1"></div>
+        <div class="mover-2"></div>
+    </div>
     <div class="container-login100" style="background-image: url({% static '/admin/img/bg-01.jpg' %});'">
+
         <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+{#            <form action="{% url "players" %}">#}
+{##}
+{##}
+{#                <button type="submit" class="button buttonBlue">View players#}
+{#                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
+{#                </button>#}
+{#            </form>#}
+{#            <form action="{% url "fixtures" %}">#}
+{##}
+{##}
+{#                <button type="submit" class="button buttonBlue">View fixtures#}
+{#                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
+{#                </button>#}
+{##}
+{#            </form>#}
+
+
             <form class="login100-form validate-form flex-sb flex-w" action=""
             {% url "index" %}"" method="post">{% csrf_token %}>
             <span class="login100-form-title p-b-53">
@@ -146,6 +197,21 @@
                     Sign Up
                 </button>
             </div>
+            {#            <form action="{% url "players" %}">#}
+            {##}
+            {##}
+            {#                <button type="submit" class="button buttonBlue">View players#}
+            {#                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
+            {#                </button>#}
+            {#                            <form action="{% url "fixtures" %}">#}
+            {##}
+            {##}
+            {#                <button type="submit" class="button buttonBlue">View fixtures#}
+            {#                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
+            {#                </button>#}
+            {#            </form>#}
+            {#            </form>#}
+
             {#            <button type="submit" class="button buttonBlue">Sign Up#}
             {#                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
             {#            </button>#}
@@ -171,7 +237,10 @@
             {#                        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>#}
             {#                    </button>#}
             {#                </form>#}
+
         </div>
+        {##}
+
     </div>
 </div>
 
@@ -204,42 +273,44 @@
 {#</div>#}
 
 <style>
-.tech-slideshow {
-  height: auto;
-  max-width: auto;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-}
+    .tech-slideshow {
+        height: auto;
+        max-width: auto;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+    }
 
+    .tech-slideshow > div {
+        height: auto;
+        width: auto
+        background: url({% static '/admin/img/bg-01.jpg' %});
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+    }
 
-.tech-slideshow > div {
-  height: auto;
-  width: auto
-  background: url({% static '/admin/img/bg-01.jpg' %});
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  transform: translate3d(0, 0, 0);
-}
-.tech-slideshow .mover-1 {
-  animation: moveSlideshow 12s linear infinite;
-}
-.tech-slideshow .mover-2 {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  background-position: 0 -200px;
-  animation: moveSlideshow 15s linear infinite;
-}
-.tech-slideshow:hover .mover-2 {
-  opacity: 1;
-}
+    .tech-slideshow .mover-1 {
+        animation: moveSlideshow 12s linear infinite;
+    }
 
-@keyframes moveSlideshow {
-  100% {
-    transform: translateX(-66.6666%);
-  }
-}
-    </style>
+    .tech-slideshow .mover-2 {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        background-position: 0 -200px;
+        animation: moveSlideshow 15s linear infinite;
+    }
+
+    .tech-slideshow:hover .mover-2 {
+        opacity: 1;
+    }
+
+    @keyframes moveSlideshow {
+        100% {
+            transform: translateX(-66.6666%);
+        }
+    }
+</style>

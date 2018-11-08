@@ -9,11 +9,11 @@ from .models import Contact
 
 def index(request):
     if request.method == 'POST':
-        print("Got post request")
+        # print("Got post request")
         # create a form instance and populate it with data from the request:
         form = CreateContactForm(request.POST)
 
-        print(request.POST)
+        # print(request.POST)
         # check whether it's valid:
         if form.is_valid():
             form.save()
@@ -27,13 +27,13 @@ def index(request):
 
 
 def thanks(request):
-    print(list(Contact.objects.all()))
+    # print(list(Contact.objects.all()))
 
     return render(request, 'thanks.html', {})
 
 
 def fixtures(request):
-    print("Fixtures")
+    # print("Fixtures")
 
     myData = [
         [
@@ -121,8 +121,8 @@ def fixtures(request):
             [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}]
         ]
     ];
-    print("below is myData1")
-    print(myData)
+    # print("below is myData1")
+    # print(myData)
     # print("below is 222")
     #
     # dict = {"myData":myData}
@@ -146,13 +146,13 @@ def fixtures(request):
         new_arr.append(newobj)
 
         # print(person)
-    print("///////////")
-    print(salesforceData)
+    # print("///////////")
+    # print(salesforceData)
     half = int(len(all_people) / 2)
-    print(half)
+    # print(half)
     halfAlist = all_people[::5]
-    print("halfAlist")
-    print(halfAlist)
+    # print("halfAlist")
+    # print(halfAlist)
     round2 = []
 
     for person in halfAlist:
@@ -162,8 +162,8 @@ def fixtures(request):
         newobj = {"name": str(person)}
         new_arr.append(newobj)
 
-    print("round2")
-    print(round2)
+    # print("round2")
+    # print(round2)
     round3 = []
     round4 = []
     round5 = []
@@ -172,10 +172,10 @@ def fixtures(request):
     # tiptop.append(round2)
     salesforceData.append(round2)
     salesforceData2 = salesforceData
-    print("salesforceData")
-    print(salesforceData)
-    print("salesforceData2")
-    print(salesforceData2)
+    # print("salesforceData")
+    # print(salesforceData)
+    # print("salesforceData2")
+    # print(salesforceData2)
 
     topLevelArr = []
     topLevelArr.append(salesforceData)
@@ -223,8 +223,8 @@ def fixtures(request):
     # ];
     # print("myData")
     # print(myData2)
-    print("tiptop")
-    print(tiptop)
+    # print("tiptop")
+    # print(tiptop)
     # dict = {"myData": myData}
     # dict = {"myData": myData2}
     dict = {"myData": tiptop}
@@ -233,8 +233,8 @@ def fixtures(request):
 
 
 def players(request):
-    print(list(Contact.objects.all()))
-    print(Contact)
+    # print(list(Contact.objects.all()))
+    # print(Contact)
     idlimit = 50
     # for i in range(3,idlimit):
     #     Contact.objects.filter(id=i).delete()

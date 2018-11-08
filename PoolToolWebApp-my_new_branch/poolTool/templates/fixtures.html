@@ -6,6 +6,7 @@
 <script src="{% static 'admin/js/jquery.gracket.min.js' %}"></script>
 <html lang="en-US">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="icon" href="{% static 'admin/img/blackball.png' %}">
     <meta charset="UTF-8">
     <title>PoolTool Fixture Bracket</title>
@@ -36,7 +37,9 @@
             padding: 10px 8px 8px;
             font-size: 18px;
             font-weight: normal;
-            color: #fff
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+
         }
 
         .g_team {
@@ -70,6 +73,7 @@
             color: #CCC;
             text-align: center;
             font-size: 18px;
+            font-family: 'Roboto', sans-serif;
         }
     </style>
 
@@ -86,93 +90,153 @@
 <!-- empty gracket element -->
 <div class="my_gracket"></div>
 <div class="container-login100" style="background-image: url({% static '/admin/img/bg-01.jpg' %});'">
-<script type="text/javascript">
-    (function (win, doc, $) {
+    <script type="text/javascript">
+        (function (win, doc, $) {
 
-        console.warn("Make sure the min-width of the .gracket_h3 element is set to width of the largest name/player. Gracket needs to build its canvas based on the width of the largest element. We do this my giving it a min width. I'd like to change that!");
-        console.warn({{ dict2.myData|safe }})
-        console.warn({{ dict2|safe }})
-        // Fake Data
-        win.TestData = {{ dict2.myData|safe }};
-        win.TestData = [
-        	[
-        		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1, "displaySeed": "D1", "score" : 47 }, {"name" : "Andrew Miller", "id" : "andrew-miller", "seed" : 2} ],
-        		[ {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3}, {"name" : "Sam Merrill", "id" : "sam-merrill", "seed" : 4}],
-        		[ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Everett Zettersten", "id" : "everett-zettersten", "seed" : 6} ],
-        		[ {"name" : "John Scott", "id" : "john-scott", "seed" : 7}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
-        		[ {"name" : "Arnold Palmer", "id" : "arnold-palmer", "seed" : 9}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ],
-        		[ {"name" : "Jesse James", "id" : "jesse-james", "seed" : 1}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12}],
-        		[ {"name" : "Josh Groben", "id" : "josh-groben", "seed" : 13}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ],
-        		[ {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15}, {"name" : "Spencer Zettersten", "id" : "spencer-zettersten", "seed" : 16}]
-        	],
-        	[
-        		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3} ],
-        		[ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8} ],
-        		[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12} ],
-        		[ {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}, {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15} ]
-        	],
-        	[
-        		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],
-        		[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]
-        	],
-        	[
-        		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ]
-        	],
-        	[
-        		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1} ]
-        	]
-        ];
+            console.warn("Make sure the min-width of the .gracket_h3 element is set to width of the largest name/player. Gracket needs to build its canvas based on the width of the largest element. We do this my giving it a min width. I'd like to change that!");
+            console.warn({{ dict2.myData|safe }})
+            console.warn({{ dict2|safe }})
+            // Fake Data
+            win.TestData = {{ dict2.myData|safe }};
+            {#win.TestData = [#}
+            {#    [#}
+            {#        [{#}
+            {#            "name": "Erik Zettersten",#}
+            {#            "id": "erik-zettersten",#}
+            {#            "seed": 1,#}
+            {#            "displaySeed": "D1",#}
+            {#            "score": 47#}
+            {#        }, {"name": "Andrew Miller", "id": "andrew-miller", "seed": 2}],#}
+            {#        [{"name": "James Coutry", "id": "james-coutry", "seed": 3}, {#}
+            {#            "name": "Sam Merrill",#}
+            {#            "id": "sam-merrill",#}
+            {#            "seed": 4#}
+            {#        }],#}
+            {#        [{"name": "Anothy Hopkins", "id": "anthony-hopkins", "seed": 5}, {#}
+            {#            "name": "Everett Zettersten",#}
+            {#            "id": "everett-zettersten",#}
+            {#            "seed": 6#}
+            {#        }],#}
+            {#        [{"name": "John Scott", "id": "john-scott", "seed": 7}, {#}
+            {#            "name": "Teddy Koufus",#}
+            {#            "id": "teddy-koufus",#}
+            {#            "seed": 8#}
+            {#        }],#}
+            {#        [{"name": "Arnold Palmer", "id": "arnold-palmer", "seed": 9}, {#}
+            {#            "name": "Ryan Anderson",#}
+            {#            "id": "ryan-anderson",#}
+            {#            "seed": 10#}
+            {#        }],#}
+            {#        [{"name": "Jesse James", "id": "jesse-james", "seed": 1}, {#}
+            {#            "name": "Scott Anderson",#}
+            {#            "id": "scott-anderson",#}
+            {#            "seed": 12#}
+            {#        }],#}
+            {#        [{"name": "Josh Groben", "id": "josh-groben", "seed": 13}, {#}
+            {#            "name": "Sammy Zettersten",#}
+            {#            "id": "sammy-zettersten",#}
+            {#            "seed": 14#}
+            {#        }],#}
+            {#        [{"name": "Jake Coutry", "id": "jake-coutry", "seed": 15}, {#}
+            {#            "name": "Spencer Zettersten",#}
+            {#            "id": "spencer-zettersten",#}
+            {#            "seed": 16#}
+            {#        }]#}
+            {#    ],#}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}, {#}
+            {#            "name": "James Coutry",#}
+            {#            "id": "james-coutry",#}
+            {#            "seed": 3#}
+            {#        }],#}
+            {#        [{"name": "Anothy Hopkins", "id": "anthony-hopkins", "seed": 5}, {#}
+            {#            "name": "Teddy Koufus",#}
+            {#            "id": "teddy-koufus",#}
+            {#            "seed": 8#}
+            {#        }],#}
+            {#        [{"name": "Ryan Anderson", "id": "ryan-anderson", "seed": 10}, {#}
+            {#            "name": "Scott Anderson",#}
+            {#            "id": "scott-anderson",#}
+            {#            "seed": 12#}
+            {#        }],#}
+            {#        [{"name": "Sammy Zettersten", "id": "sammy-zettersten", "seed": 14}, {#}
+            {#            "name": "Jake Coutry",#}
+            {#            "id": "jake-coutry",#}
+            {#            "seed": 15#}
+            {#        }]#}
+            {#    ],#}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}, {#}
+            {#            "name": "Anothy Hopkins",#}
+            {#            "id": "anthony-hopkins",#}
+            {#            "seed": 5#}
+            {#        }],#}
+            {#        [{"name": "Ryan Anderson", "id": "ryan-anderson", "seed": 10}, {#}
+            {#            "name": "Sammy Zettersten",#}
+            {#            "id": "sammy-zettersten",#}
+            {#            "seed": 14#}
+            {#        }]#}
+            {#    ],#}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}, {#}
+            {#            "name": "Ryan Anderson",#}
+            {#            "id": "ryan-anderson",#}
+            {#            "seed": 10#}
+            {#        }]#}
+            {#    ],#}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}]#}
+            {#    ]#}
+            {#];#}
 
-        {#win.TestData = [#}
-        {#            	[#}
-        {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
-        {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
-        {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
-        {#		[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]#}
-        {#	],#}
-        {##}
-        {##}
-        {#    [#}
-        {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}, {"name": "Ryan Anderson", "id": "ryan-anderson", "seed": 10}]#}
-        {#    ],#}
-        {#    [#}
-        {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}]#}
-        {#    ]#}
-        {#];#}
+            {#win.TestData = [#}
+            {#            	[#}
+            {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
+            {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
+            {#		[ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],#}
+            {#		[ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]#}
+            {#	],#}
+            {##}
+            {##}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}, {"name": "Ryan Anderson", "id": "ryan-anderson", "seed": 10}]#}
+            {#    ],#}
+            {#    [#}
+            {#        [{"name": "Erik Zettersten", "id": "erik-zettersten", "seed": 1}]#}
+            {#    ]#}
+            {#];#}
 
-    {#    win.TestData = [#}
-    {#        [#}
-    {#            [{'name': 'John James', 'id': 'John James', 'seed': 1}, {'name': 'Fresh Prince', 'id': 'Fresh Prince', 'seed': 1}],#}
-    {#            [{'name': 'King James', 'id': 'King James', 'seed': 1}, {'name': 'Heavy Hitter', 'id': 'Heavy Hitter', 'seed': 1}],#}
-    {#            [{'name': 'Joe Blake', 'id': 'Joe Blake', 'seed': 1}, {'name': 'None', 'id': 'none', 'seed': 1}],#}
-    {#            [{'name': 'by', 'id': 'Joe Blake', 'seed': 1}, {'name': 'by', 'id': 'none', 'seed': 1}],#}
-    {#],#}
-    {##}
-    {##}
-    {#            [#}
-    {#                [{'name': 'Game 1 Winner', 'id': 'John James', 'seed': 1}, {'name': 'Game 2 Winner', 'id': 'Fresh Prince', 'seed': 1}],#}
-    {#                [{'name': 'Game 3 Winner', 'id': 'King James', 'seed': 1}, {'name': 'Game 4 Winner', 'id': 'Heavy Hitter', 'seed': 1}],#}
-    {##}
-    {#            ],#}
-    {#                        [#}
-    {#                [{'name': 'R2 Game 1 Winner', 'id': 'John James', 'seed': 1}, {'name': 'R2 Game 2 Winner', 'id': 'Fresh Prince', 'seed': 1}],#}
-    {##}
-    {##}
-    {#            ],#}
-    {##}
-    {#                                    [#}
-    {#                [{'name': 'R3 Winner', 'id': 'John James', 'seed': 1}],#}
-    {##}
-    {##}
-    {#            ],#}
-    {#        ];#}
+                win.TestData = [
+                    [[{'id': 'King James', 'name': 'King James', 'seed': 1},
+  {'id': 'Donald Glover', 'name': 'Donald Glover', 'seed': 1}],
+ [{'id': 'Charlie Kelly', 'name': 'Charlie Kelly', 'seed': 1},
+  {'id': 'Heavy Hitter', 'name': 'Heavy Hitter', 'seed': 1}],
+ [{'id': 'John James', 'name': 'John James', 'seed': 1},
+  {'id': 'Fresh Prince', 'name': 'Fresh Prince', 'seed': 1}],
+ [{'id': 'Joe Blake', 'name': 'Joe Blake', 'seed': 1},
+  {'id': 'Max Power VS Iron Man', 'name': 'Max Power', 'seed': 1}],
+],
 
 
-        console.warn(win.TestData)
-        // initializer
-        $(".my_gracket").gracket({src: win.TestData});
-    })(window, document, jQuery);
-</script>
+
+[[{'id': 'Donald Glover', 'name': 'Donald Glover', 'seed': 1},
+  {'id': 'Charlie Kelly', 'name': 'Charlie Kelly', 'seed': 1}],
+ [{'id': 'Fresh Prince', 'name': 'Fresh Prince', 'seed': 1},
+  {'id': 'Max Power', 'name': 'Max Power', 'seed': 1}],
+],
+
+[[{'id': 'Charlie Kelly', 'name': 'Charlie Kelly', 'seed': 1},
+  {'id': 'Fresh Prince', 'name': 'Fresh Prince', 'seed': 1}],
+],
+
+];
+
+
+            console.warn(win.TestData)
+            // initializer
+            $(".my_gracket").gracket({src: win.TestData});
+        })(window, document, jQuery);
+    </script>
 </div>
 </body>
 </html>
