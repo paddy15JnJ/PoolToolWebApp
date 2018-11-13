@@ -16,6 +16,11 @@ from mysite.secrets import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+CONSUMER_KEY = "3MVG9fTLmJ60pJ5KZX5.J.REVzFjkEF3dxZu6YU2KHXhT3NBxCCGNNl2SundhN1RwplN7EHGXTfp0k7jY2ZXl"
+CONSUMER_SECRET = "47483693821357081"
+USER = "amolone4@gradproject.com"
+PASSWORD = "iJKhuYuAGEemP34yydCCU9PaM9uvG4w5cDEt6xoSmqNymaQgVPst6oNbQzb5Sc9ERvo22ARWGvfXmh8vVevvFucx4Pkxnc87uDJtudTBj4Yt8UAsjPJ6B5W7hnXTKUG6thynGAo6haEUewzHskwWqaBNAmKvEsfnqzrDFr4NCXur6AVUv9z9MGVUqmsuYfgV36GUpPHRVNntyWVWWUg4h8gNEspZCHcBJu8hRQvmhKLHDtbaJZTS45Kaq8rnc3cw"
+SECURITY_TOKEN="hRuqS5gpzpiKEpYy6lVGEFhs"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
