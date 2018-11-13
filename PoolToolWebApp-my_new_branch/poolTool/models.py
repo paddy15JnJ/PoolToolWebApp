@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
-import salesforce
+# import salesforce
 
 class Contact(salesforce.models.Model):
     # Example that db_column is not necessary for most of fields even with
